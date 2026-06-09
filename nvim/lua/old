@@ -1,0 +1,76 @@
+-- This file needs to have same structure as nvconfig.lua 
+-- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
+-- Please read that file to know all available options :( 
+
+---@type ChadrcConfig
+local M = {}
+local c = {
+    white = "#ffffff",
+    black = "#000000",
+    yellow = "#ffff00",
+    red = "#ff0000",
+    cyan = "#00ffff",
+    green = "#00ff00",
+    blue = "#0000ff",
+    pink = "#ff00ff",
+    orange = "#ff6600",
+    gray = "#5b5b5b",
+    gray1 = "#7b7b7b",
+
+    green1 = "#6a9955",
+    white1 = "#AFAFFF",
+    yellow1 = "#d1d100",
+    orange1 = "#ff8533",
+    green2 = "#00ff66"
+}
+
+M.base46 = {
+	theme = "radium",
+    hl_override = {
+        ["@number"] = { fg = c.white },
+        ["@operator"] = { fg = c.white },
+        ["@function"] = { fg = c.white, bold = false },
+        ["@comment"] = { fg = c.orange },
+        ["@string"] = { fg = c.green2 },
+        ["@keyword"] = { fg = c.yellow, bold = true },
+        ["@keyword.conditional"] = { fg = c.yellow, bold = true },
+        ["@keyword.return"] = { fg = c.yellow, bold = true },
+        ["@keyword.operator"] = { fg = c.yellow, bold = true },
+        ["@constant"] = { fg = c.white, bold = false },
+        ["@variable"] = { fg = c.white },
+        --["@constant.macro"] = { fg = c.pink },
+        --["@function.macro"] = { fg = c.pink },
+        --["@punctuation.bracket"] = { fg = c.yellow },
+        --["@constructor"] = { fg = c.pink }
+    },
+    changed_themes = {
+        radium = {
+            base_16 = {
+                base00 = c.black, --background
+                base01 = c.yellow,  --lighter background
+                base02 = c.yellow1, --selection background
+                base03 = c.pink, --comments
+                base04 = c.yellow1, --dark foreground, status bars
+                base05 = c.white, --default for operators, variables
+                base06 = c.white,
+                base07 = c.white,
+                base08 = c.white, --var, identifiers
+                base09 = c.orange1, --int, bool, constants
+                base0A = c.gray1, --types, structs
+                base0B = c.green1, --strings, symbols
+                --base0C = c.blue, --constructor, regex, escape characters
+                base0D = c.yellow, --functs, methods, headings
+                base0E = c.yellow, --keywords
+                base0F = c.white, --delimiters, special chars
+            },
+        },
+    },
+}
+
+
+M.ui = {
+  statusline = {
+    theme = "vscode", -- or "vscode", "minimal"
+  },
+}
+return M
